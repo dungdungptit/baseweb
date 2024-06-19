@@ -12,7 +12,7 @@ const Settings: LayoutSettings & {
   fixSiderbar: true,
   colorWeak: false,
   headerTheme: 'dark',
-  title: 'Xét tuyển PTIT',
+  title: 'Chatbot tuyển sinh PTIT',
   pwa: false,
   logo: '/favicon.ico',
   iconfontUrl: '',

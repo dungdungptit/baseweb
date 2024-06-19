@@ -138,7 +138,7 @@ const Index = () => {
             modelModel.autoTrain();
           }}
         >
-          {modelModel.loadingTrain ? 'Đang tạo mô hình mới' : 'Đào tạo mô hình mới'}
+          {modelModel.loadingTrain ? 'Đang cập nhập dữ liệu mới' : 'Cập nhập dữ liệu mới'}
         </Button>
         {/* {modelModel.isClickTrain && (
           <>
@@ -150,7 +150,7 @@ const Index = () => {
           </>
         )} */}
       </Card>
-      <TableBase
+      {/* <TableBase
         modelName={'model'}
         title="Các mô hình đã tạo"
         columns={columns}
@@ -172,7 +172,7 @@ const Index = () => {
             x: 1000,
           },
         }}
-      />
+      /> */}
     </>
   );
 };

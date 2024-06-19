@@ -1,7 +1,7 @@
 import { getInfo } from '@/services/ant-design-pro/api';
 
 import type { Effect, Reducer } from 'umi';
-import type { ListItemDataType } from './data.d';
+import type { ListItemDataType } from './data';
 import { queryFakeList } from './service';
 
 export interface ModalState {

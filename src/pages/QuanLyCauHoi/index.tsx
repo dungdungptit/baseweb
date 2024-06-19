@@ -78,6 +78,7 @@ const Index = () => {
     {
       title: 'Câu trả lời',
       dataIndex: 'answer',
+      render: (value: any, record: IQuestionRecord) => (<p>{value.slice(0, value.length > 150 ? 150 : value.length)}{value.length > 150 && "..."}</p>),
       width: 200,
       align: 'left',
     },
