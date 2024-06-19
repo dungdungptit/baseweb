@@ -152,7 +152,9 @@ const FormQuestion = () => {
                   <Input placeholder="Nhập câu hỏi" name="question" />
                 </Form.Item>
                 <Form.Item label="Câu trả lời" name="answer">
-                  <Input placeholder="Nhập câu trả lời" name="answer" />
+                  <TextArea placeholder="Nhập câu trả lời" name="answer" style={{
+                    minHeight: '200px'
+                  }} />
                 </Form.Item>
                 <Form.Item {...tailLayout}>
                   <Button type="primary" htmlType="submit">
