@@ -23,7 +23,6 @@ type Props = {
   dependencies?: any[];
   loading: boolean;
   params?: any;
-  onRow: Function,
   children?: React.ReactNode;
   border?: boolean;
   hascreate?: boolean;
@@ -45,7 +44,6 @@ const TableBase = (props: Props) => {
     loading,
     children,
     params,
-    onRow,
     border,
     hascreate,
     widthDrawer,
@@ -341,7 +339,6 @@ const TableBase = (props: Props) => {
         scroll={{ x: 1000 }}
         loading={loading}
         bordered={border || false}
-        onRow={onRow}
         pagination={{
           current: page,
           pageSize: limit,

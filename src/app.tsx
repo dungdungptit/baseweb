@@ -144,10 +144,10 @@ export const layout: RunTimeLayoutConfig = ({ initialState }) => {
     onPageChange: () => {
       const { location } = history;
       const token = localStorage.getItem('token');
-      const vaiTro = localStorage.getItem("vaiTro");
+      const vaiTro = initialState?.currentUser?.systemRole;
       if (!token && location.pathname !== loginPath && !pathAuth.includes(location.pathname)) {
         history.push(loginPath);
-      } else if (token) {
+      } else if (initialState?.currentUser && token) {
         if (
           (vaiTro == ESystemRole.User || vaiTro == ESystemRole.Admin) &&
           location.pathname === loginPath
@@ -184,6 +184,6 @@ export const layout: RunTimeLayoutConfig = ({ initialState }) => {
     },
     menuHeaderRender: undefined,
     ...initialState?.settings,
-    title: 'Chatbot',
+    title: 'Chatbot Data Server',
   };
 };

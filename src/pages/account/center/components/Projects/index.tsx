@@ -4,7 +4,7 @@ import React from 'react';
 import { connect } from 'umi';
 import moment from 'moment';
 import AvatarList from '../AvatarList';
-import type { ListItemDataType } from '../../data';
+import type { ListItemDataType } from '../../data.d';
 import type { ModalState } from '../../model';
 import styles from './index.less';
 

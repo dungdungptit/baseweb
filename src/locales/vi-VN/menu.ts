@@ -107,6 +107,5 @@ export default {
   'menu.quanlinguoidung': 'Quản lý người dùng',
   'menu.quanlinguoidung.danhsachnguoidung': 'Người dùng',
   'menu.quanlinguoidung.danhsachnhomnguoidung': 'Nhóm người dùng',
-  'menu.danhsachtopic': 'Dữ liệu',
-  'menu.fqas': 'Phản hồi nhận được',
+  'menu.danhsachtopic': 'Chủ đề',
 };

@@ -16,7 +16,6 @@ import {
   Tabs,
   Divider,
 } from 'antd';
-import TextArea from 'antd/lib/input/TextArea';
 import React, { useEffect, useState } from 'react';
 import { useModel } from 'umi';
 
@@ -123,9 +122,7 @@ const FormQuestion = () => {
               <Input placeholder="Nhập câu hỏi" name="question" />
             </Form.Item>
             <Form.Item label="Câu trả lời" name="answer">
-              <TextArea placeholder="Nhập câu trả lời" name="answer" style={{
-                minHeight: '200px'
-              }} />
+              <Input placeholder="Nhập câu trả lời" name="answer" />
             </Form.Item>
             <Form.Item {...tailLayout}>
               <Button type="primary" htmlType="submit">

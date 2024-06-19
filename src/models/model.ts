@@ -121,21 +121,14 @@ export default () => {
       setTimeout(() => {
         setPercent(90);
       }, 5000);
-      // await model.exportnludata('nlu');
-      const token = localStorage.getItem('token');
-      if (token) {
-        const res = await model.autotrain(token);
-        console.log(res);
-        if (res.status === 200) {
-          message.success('Cập nhập dữ liệu mới thành công, hãy trò chuyện với chatbot để kiểm tra lại', 10);
-          setPercent(100);
-          setStatus('success');
-        }
-      }
-      else {
-        message.error('Lỗi thực hiện');
+      await model.exportnludata('nlu');
+      const res = await model.autotrain();
+      console.log(res);
+      if (res.status === 200) {
+        message.success('Đã đào tạo lại model thành công, hãy nhắn tin cho bot để kiểm tra lại', 10);
+        getData();
         setPercent(100);
-        setStatus('exception');
+        setStatus('success');
       }
     } catch (error) {
       message.error('Lỗi thực hiện');

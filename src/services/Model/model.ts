@@ -3,7 +3,7 @@ import { data } from '@/utils/data';
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @typescript-eslint/naming-convention */
 import axios from '@/utils/axios';
-import { ip, ip3 } from '@/utils/ip';
+import { ip } from '@/utils/ip';
 
 
 export interface IPayload {
@@ -42,8 +42,8 @@ class Model<T> {
     return axios.post(`${ip}/ModelRasaView`, payload);
   };
 
-  autotrain = async (token: string) => {
-    return axios.get(`${ip3}/re_ingest`, { params: { jwt: token } });
+  autotrain = async () => {
+    return axios.post(`${ip}/AutoTrain`);
   }
   exportnludata = async (check: string) => {
     return axios.get(`${ip}/export`, { params: { check } });

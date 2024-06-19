@@ -33,7 +33,6 @@ export default () => {
       setLoading(true);
       console.log(page, limit, condition);
       const res = await topic.get({
-        "sort": "priority:desc",
         "pagination[page]": page,
         "pagination[pageSize]": limit,
         ...condition,
