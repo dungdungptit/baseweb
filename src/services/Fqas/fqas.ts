@@ -3,7 +3,7 @@ import { data } from '@/utils/data';
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @typescript-eslint/naming-convention */
 import axios from '@/utils/axios';
-import { ip, ip3 } from '@/utils/ip';
+import { ip } from '@/utils/ip';
 
 
 export interface IPayload {
@@ -13,7 +13,7 @@ export interface IPayload {
   cond: object,
 }
 
-class Question<T> {
+class Fqas<T> {
   name: string;
   url: string;
 
@@ -28,7 +28,15 @@ class Question<T> {
 
   get = async (payload: IPayload) => {
     // console.log(payload);
-    return axios.get(`${ip}/${this.url}`, { params: { populate: "*", ...payload } });
+    const queryParams = new URLSearchParams({ populate: "*", ...payload });
+    const response = await fetch(`${ip}/${this.url}?${queryParams}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data_response = await response.json();
+    return data_response
   };
 
   get_by_id = async (id: string) => {
@@ -36,20 +44,13 @@ class Question<T> {
     return axios.get(`${ip}/${this.url}`, { params: { question_id: id } });
   };
 
-  add = async (payload: any) => {
-    const vector = await axios.get(`${ip3}/encode`, { params: { question: payload.data.question } })
-    const data = {
-      data: {
-        ...payload.data,
-        "vector": vector.data.data
-      }
-    }
-    return axios.post(`${ip}/${this.url}`, data);
+  add = async (payload: T) => {
+    return axios.post(`${ip}/${this.url}`, payload);
   };
   addFile = async (payload: T) => {
     return axios.post(`${ip}/files/question`, payload);
   };
-  addFileQuestion = async (payload: T) => {
+  addFileFqas = async (payload: T) => {
     return axios.post(`${ip}/import_quesion/`, payload);
   };
 
@@ -61,16 +62,14 @@ class Question<T> {
     return axios.post(`${ip}/${this.url}`, payload);
   };
 
-  upd = async (payload: any & { id: string | undefined, data: any }) => {
+  upd = async (payload: T & { id: string | undefined, data: any }) => {
     const { id } = payload;
     payload.id = undefined;
-
-    const vector = await axios.get(`${ip3}/encode`, { params: { question: payload.data.data.question } })
-    return axios.put(`${ip}/${this.url}/${id}`, { data: { ...payload.data.data, "vector": vector.data.data } });
+    return axios.put(`${ip}/${this.url}/${id}`, payload.data);
   };
 
 }
 
-const question = new Question({ name: 'Question', url: 'api/questions' });
+const question = new Fqas({ name: 'Fqas', url: 'api/feedbacks' });
 
 export default question;

@@ -19,6 +19,7 @@ const loginOut = async () => {
     history.replace({
       pathname: '/user/login',
     });
+    localStorage.removeItem('username');
     localStorage.removeItem('vaiTro');
     localStorage.removeItem('token');
     localStorage.removeItem('accessTokens');
@@ -34,7 +35,7 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
     async (event: MenuInfo) => {
       const { key } = event;
       if (key === 'logout' && initialState) {
-        await logout();
+        // await logout();
         setInitialState({ ...initialState, currentUser: undefined });
         loginOut();
         return;

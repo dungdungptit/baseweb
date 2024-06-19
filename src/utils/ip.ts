@@ -1,7 +1,7 @@
-const ip3 = 'http://192.168.10.198:1337'; // ip dev
-const ip = 'http://192.168.10.198:1337'; // ip dev
+const ip3 = 'http://222.252.29.85:19880'; // ip dev
+const ip = 'http://222.252.29.85:19838'; // ip dev
 
-const ipPayment = 'http://192.168.10.198:1337/payment'; // ip dev
+const ipPayment = 'http://222.252.29.85:19838/payment'; // ip dev
 
 // const ip3 = 'https://dkxt.apd.edu.vn/api-v3'; // ip dev
 // const ip = 'https://dkxt.apd.edu.vn/api-v3'; // ip dev

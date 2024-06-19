@@ -27,13 +27,13 @@ const Login: React.FC = () => {
       console.log('info', info);
       if (info.status === 200) {
         let systemRole = 'Admin';
-        if (info.data?.is_superuser === true) {
-          systemRole = 'Admin';
-        } else if (info.data?.is_staff === true) {
-          systemRole = 'Staff';
-        } else {
-          systemRole = 'User';
-        }
+        // if (info.data?.is_superuser === true) {
+        //   systemRole = 'Admin';
+        // } else if (info.data?.is_staff === true) {
+        //   systemRole = 'Staff';
+        // } else {
+        //   systemRole = 'User';
+        // }
         localStorage.setItem('vaiTro', systemRole);
         setInitialState({
           ...initialState,
