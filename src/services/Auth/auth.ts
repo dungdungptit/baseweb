@@ -14,6 +14,10 @@ export const login = async (payload: FormData) => {
   return res;
 };
 
+export async function write(token: string) {
+  return axios.get(`${ip3}/write`, { params: { jwt: token } });
+}
+
 export async function getInfo() {
   return axios.get(`${ip}/api/users/me`);
 }
