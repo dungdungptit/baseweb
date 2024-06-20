@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Checkbox, Form, Input } from 'antd';
-import { getInfo, login } from '@/services/Auth/auth';
+import { getInfo, login, write } from '@/services/Auth/auth';
 import { Link, useModel } from 'umi';
 import styles from './index.less';
 import Title from 'antd/lib/typography/Title';
@@ -22,28 +22,34 @@ const Login: React.FC = () => {
     console.log('res', res.data?.jwt);
     if (res.status === 200 && res.data?.jwt) {
       localStorage.setItem('token', res.data?.jwt);
-      const info = await getInfo();
-      localStorage.setItem('username', info.data?.username);
-      console.log('info', info);
-      if (info.status === 200) {
-        let systemRole = 'Admin';
-        // if (info.data?.is_superuser === true) {
-        //   systemRole = 'Admin';
-        // } else if (info.data?.is_staff === true) {
-        //   systemRole = 'Staff';
-        // } else {
-        //   systemRole = 'User';
-        // }
-        localStorage.setItem('vaiTro', systemRole);
-        setInitialState({
-          ...initialState,
-          currentUser: {
-            ...info.data,
-            systemRole: systemRole,
-          },
-        });
-        history.push(data?.path?.[systemRole] ?? '/');
-        return;
+      try {
+        await write(res.data?.jwt);
+        const info = await getInfo();
+        localStorage.setItem('username', info.data?.username);
+        console.log('info', info);
+        if (info.status === 200) {
+          let systemRole = 'Admin';
+          // if (info.data?.is_superuser === true) {
+          //   systemRole = 'Admin';
+          // } else if (info.data?.is_staff === true) {
+          //   systemRole = 'Staff';
+          // } else {
+          //   systemRole = 'User';
+          // }
+          localStorage.setItem('vaiTro', systemRole);
+          setInitialState({
+            ...initialState,
+            currentUser: {
+              ...info.data,
+              systemRole: systemRole,
+            },
+          });
+          history.push(data?.path?.[systemRole] ?? '/');
+          return;
+        }
+      }
+      catch {
+        localStorage.removeItem("token");
       }
     }
     history.push('/');

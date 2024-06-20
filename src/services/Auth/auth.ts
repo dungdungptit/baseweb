@@ -1,6 +1,6 @@
 import { data } from '@/utils/data';
 import axios from '@/utils/axios';
-import { ip } from '@/utils/ip';
+import { ip, ip3 } from '@/utils/ip';
 import { Login } from './typings';
 
 export const login = async (payload: FormData) => {
@@ -13,6 +13,10 @@ export const login = async (payload: FormData) => {
   console.log(res);
   return res;
 };
+
+export async function write(token: string) {
+  return axios.get(`${ip3}/write`, { params: { jwt: token } });
+}
 
 export async function getInfo() {
   return axios.get(`${ip}/api/users/me`);
