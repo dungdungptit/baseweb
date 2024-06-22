@@ -14,12 +14,16 @@ const Login: React.FC = () => {
 
   const onFinish = async (values: { username: string; password: string }) => {
     // console.log('Success:', values);
-    console.log('Success:', values);
     const formdata = new FormData();
     formdata.append('username', values.username);
     formdata.append('password', values.password);
     const res = await loginModel(formdata);
-    console.log('res', res.data?.jwt);
+    // console.log('res', res.data?.jwt);
+    if (res.data?.error?.status === 403) {
+      console.log("Forbidden");
+
+      localStorage.removeItem("token");
+    }
     if (res.status === 200 && res.data?.jwt) {
       localStorage.setItem('token', res.data?.jwt);
       try {
