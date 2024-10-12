@@ -100,7 +100,7 @@ const FormIntent = () => {
   return (
     <Spin spinning={intentModel.loading}>
       {intentModel.edit ? (
-        <Card title={'Chỉnh sửass'}>
+        <Card title={'Chỉnh sửa'}>
           <Form
             id="formIntent"
             layout='vertical'

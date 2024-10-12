@@ -375,7 +375,7 @@ export const Setting = {
   fixedHeader: false,
   fixSiderbar: true,
   colorWeak: false,
-  title: 'Xét tuyển PTIT',
+  title: 'Xét tuyển FTU',
   pwa: false,
   logo: '/favicon.ico',
   iconfontUrl: '',

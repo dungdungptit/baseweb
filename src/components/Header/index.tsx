@@ -93,7 +93,7 @@ const Header = () => {
                 />
               </svg>
 
-              <span>tuyensinh@ptit.edu.vn</span>
+              <span>tuyensinh@FTU.edu.vn</span>
             </div>
           </>
         )}

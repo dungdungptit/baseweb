@@ -1,6 +1,6 @@
 {
-  "name": "Xét tuyển PTIT",
-  "short_name": "Xét tuyển PTIT",
+  "name": "Xét tuyển FTU",
+  "short_name": "Xét tuyển FTU",
   "display": "standalone",
   "start_url": "./?utm_source=homescreen",
   "theme_color": "#002140",

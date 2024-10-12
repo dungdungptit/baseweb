@@ -151,7 +151,7 @@ const ThanhToan = (props: { record?: { identityCode: string; trangThaiThanhToan?
             - Sinh viên có thể tham khảo hướng dẫn thanh toán chi tiết tại{' '}
             <a
               target="_blank"
-              href="https://tuyensinhvlvh.ptit.edu.vn/api/documents/fileUpload-1635269140137-ptit_vlvh___hd_thanh_to_n_nh_p_h_c.pdf"
+              href="https://tuyensinhvlvh.FTU.edu.vn/api/documents/fileUpload-1635269140137-FTU_vlvh___hd_thanh_to_n_nh_p_h_c.pdf"
               rel="noreferrer"
             >
               đây

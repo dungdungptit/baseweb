@@ -70,7 +70,7 @@ export default () => {
       placeholder="站内搜索"
       defaultValue="umi ui"
       options={[
-        { label: 'Xét tuyển PTIT', value: 'Xét tuyển PTIT' },
+        { label: 'Xét tuyển FTU', value: 'Xét tuyển FTU' },
         {
           label: 'Ant Design',
           value: 'Ant Design',

@@ -344,7 +344,7 @@ const LoginGlobal: React.FC = () => {
           <div className={styles.containericonhuongdan}>
             <Tooltip title="Đề án tuyển sinh">
               <Button
-                onClick={() => window.open('https://tuyensinh.ptit.edu.vn/deantuyensinh')}
+                onClick={() => window.open('https://tuyensinh.FTU.edu.vn/deantuyensinh')}
                 className={styles.iconhuongdan}
                 icon={<NotificationOutlined />}
                 shape="circle"

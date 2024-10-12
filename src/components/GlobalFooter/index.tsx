@@ -77,7 +77,7 @@ const GlobalFooter = () => (
                   strokeLinejoin="round"
                 />
               </svg>
-              tuyensinh@ptit.edu.vn
+              tuyensinh@FTU.edu.vn
             </div>
           </Col>
         </Row>
@@ -136,17 +136,17 @@ const GlobalFooter = () => (
       </Col>
       <Col xs={24} lg={7} style={{ marginTop: 20 }}>
         <div style={{ marginBottom: '10px' }}>
-          <a href="https://portal.ptit.edu.vn/" className={styles.FooterTagA}>
+          <a href="https://portal.FTU.edu.vn/" className={styles.FooterTagA}>
             <Badge color="black" dot={true} /> <span>Cổng thông tin đào tạo</span>
           </a>
         </div>
         <div style={{ marginBottom: '10px' }}>
-          <a href="https://www.facebook.com/ptittuyensinh/" className={styles.FooterTagA}>
+          <a href="https://www.facebook.com/FTUtuyensinh/" className={styles.FooterTagA}>
             <Badge color="black" dot={true} /> <span>Facebook tuyển sinh Học viện</span>
           </a>
         </div>
         <div style={{ marginBottom: '10px' }}>
-          <a href="https://portal.ptit.edu.vn/ba-cong-khai/" className={styles.FooterTagA}>
+          <a href="https://portal.FTU.edu.vn/ba-cong-khai/" className={styles.FooterTagA}>
             <Badge color="black" dot={true} /> <span>Ba công khai</span>
           </a>
         </div>

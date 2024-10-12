@@ -16,7 +16,7 @@ export default () => {
         {
           key: 'github',
           title: 'Học viện Công nghệ Bưu chính Viễn thông',
-          href: 'https://portal.ptit.edu.vn/',
+          href: 'https://portal.FTU.edu.vn/',
           blankTarget: true,
         },
       ]}
